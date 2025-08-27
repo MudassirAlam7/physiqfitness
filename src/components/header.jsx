@@ -53,21 +53,21 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-md border-t border-gray-200">
           <nav className="flex flex-col space-y-4 p-5">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">
               Home
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium">
               About
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </Link>
+            <Link to="/services" className="text-gray-700 hover:text-blue-600 font-medium">
               Services
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </Link>
+            <Link to="/team" className="text-gray-700 hover:text-blue-600 font-medium">
               Team
-            </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium">
               Contact
-            </a>
+            </Link>
 
             {/* Contact & Button for mobile */}
             <div className="flex flex-col space-y-3 pt-3 border-t border-gray-200">

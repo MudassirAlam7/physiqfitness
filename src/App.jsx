@@ -7,12 +7,19 @@ import { About } from './pages/About'
 import { Route, Router, Routes } from 'react-router-dom'
 import { Footer } from './components/Footer'
 import Contact from './pages/Contact'
+import Topbar from './components/Topbar'
 const App = () => {
   return (
     <div>
+      <Topbar/>
     <Header/>
    <Routes>
-    <Route path='/' element={<Home/>} />
+    <Route path='/' element={<>
+    <Home/>
+    <Services/>
+    <About/>
+    <Contact/>
+    </>} />
     <Route path='/services' element={<Services/>} />
     <Route path='/about' element={<About/>} />
     <Route path='/contact' element = {<Contact/>}/>

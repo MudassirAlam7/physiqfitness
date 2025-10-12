@@ -1,79 +1,143 @@
-import React from "react";
-import { ArrowRight, Play } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import heroImage from "../assets/physiotherapy-2.jpg";
+import card1 from "../assets/img1.jpg";
+import card2 from "../assets/img2.jpg";
+import card3 from "../assets/img3.jpg";
+import card4 from "../assets/img4.jpg";
+import card5 from "../assets/img5.jpg";
+import card6 from "../assets/img6.jpg";
+
+const cards = [
+  { image: card1, title: "Physio Therapy", desc: "Recovery programs for injuries." },
+  { image: card2, title: "Massage Therapy", desc: "Relax and relieve tension." },
+  { image: card3, title: "Posture Correction", desc: "Improve your posture." },
+  { image: card4, title: "Sports Rehab", desc: "Get back in the game quickly." },
+  { image: card5, title: "Pain Management", desc: "Reduce chronic pain effectively." },
+  { image: card6, title: "Wellness Programs", desc: "Maintain health and mobility." },
+];
+
 
 const Home = () => {
+  const [currentCard, setCurrentCard] = useState(0);
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentCard((prev) => (prev + 1) % cards.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section
-      id="home"
-     className="bg-gradient-to-br from-blue-50 via-white to-blue-100 pt-12 pb-20 lg:pt-16 lg:pb-28"
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-10">
-            {/* Heading & Description */}
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-                Expert Physiotherapy for Your
-                <span className="block text-blue-600 mt-2">
-                  Recovery Journey
-                </span>
-              </h1>
-              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg">
-                Get back to doing what you love with personalized treatment
-                plans, state-of-the-art equipment, and compassionate care from
-                our certified physiotherapist.
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 tracking-wide">Dr. Mujeeb-Ur-Rehman (PT)</h4>
-            </div>
+    <>
+      {/* HERO SECTION */}
+      <section
+        className="relative min-h-screen  flex items-center justify-center bg-cover bg-top pt-20 overflow-hidden"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <motion.div
+          className="absolute inset-0 bg-black/50"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.05 }}
+          transition={{
+            duration: 10,
+            ease: "easeOut",
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        ></motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5">
-              <button className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300">
-                Book Your Assessment
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
+        <motion.div
+          className="relative z-10 text-center text-white px-6 max-w-2xl"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold leading-tight mb-4"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Revitalize Your Body with{" "}
+            <span className="text-teal-400">Expert Physio Therapy</span>
+          </motion.h1>
 
-              <button className="flex items-center justify-center border border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold px-6 py-3 rounded-full transition duration-300">
-                <Play className="mr-2 w-5 h-5 text-blue-600" />
-                Watch Our Story
-              </button>
-            </div>
+          <motion.p
+            className="text-lg md:text-xl mb-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            Personalized physiotherapy sessions designed to help you recover faster
+            and move better.
+          </motion.p>
 
-            {/* Stats Section */}
-            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">15+</div>
-                <div className="text-sm text-gray-600 mt-1">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">2500+</div>
-                <div className="text-sm text-gray-600 mt-1">Patients Treated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">98%</div>
-                <div className="text-sm text-gray-600 mt-1">Success Rate</div>
-              </div>
-            </div>
+          <motion.button
+            className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full font-semibold transition duration-300 shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            Book an Appointment
+          </motion.button>
+        </motion.div>
+      </section>
+
+      {/* CARD CAROUSEL SECTION */}
+      <section className="relative bg-gray-100 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-teal-900 text-center mb-10">
+            The Physic Fitness Services
+          </h2>
+          <p className="text-center text-gray-500 text-lg md:text-xl max-w-3xl mx-auto mt-4 mb-10">The Physic Fitness offers expert physiotherapy treatments across multiple specialties and locations. Contact us to check the availability of physiotherapists near you.</p>
+
+          <div className="relative flex overflow-hidden">
+            {cards.map((card, index) => (
+              <motion.div
+                key={index}
+                className="flex gap-6 transition-transform duration-500"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: index === currentCard ? 1 : 0.5,
+                  y: index === currentCard ? 0 : 20,
+                  scale: index === currentCard ? 1 : 0.9,
+                }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+                    <p className="text-gray-600">{card.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Right Content (Image with Decorations) */}
-          <div className="relative">
-            <div className="relative z-10">
-              <img
-                src="https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaHlzaW90aGVyYXB5JTIwdHJlYXRtZW50JTIwc2Vzc2lvbnxlbnwxfHx8fDE3NTU5ODYyNDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Physiotherapy treatment session"
-                className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
-              />
-            </div>
-
-            {/* Decorative shapes */}
-            <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-blue-600 rounded-2xl opacity-20"></div>
-            <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-300 rounded-full opacity-30"></div>
+          {/* Carousel indicators */}
+          <div className="flex justify-center mt-6 space-x-3">
+            {cards.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentCard(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === currentCard ? "bg-teal-600 w-6" : "bg-gray-400"
+                }`}
+              ></button>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

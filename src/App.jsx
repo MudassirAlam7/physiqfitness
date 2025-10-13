@@ -8,6 +8,7 @@ import { Route, Router, Routes } from 'react-router-dom'
 import { Footer } from './components/Footer'
 import Contact from './pages/Contact'
 import Topbar from './components/Topbar'
+import Chiropractic from './pages/chiropractic'
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
     <Route path='/services' element={<Services/>} />
     <Route path='/about' element={<About/>} />
     <Route path='/contact' element = {<Contact/>}/>
+    <Route path='/services/chiro' element={<Chiropractic/>}/>
    </Routes>
    <Footer/>
    </div>

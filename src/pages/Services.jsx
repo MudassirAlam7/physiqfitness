@@ -1,6 +1,7 @@
 import React from "react";
 import { Activity, Heart, Zap, Shield, Users, Target, Crosshair, } from "lucide-react";
 import { MoveRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const icons = {
@@ -20,6 +21,7 @@ const Services = () => {
       description:
         "Hands-on spinal adjustments to improve alignment, relieve pain, and enhance mobility.",
       features: ["Spinal adjustments", "Pain relief", "Improved posture"],
+      to : 'chiro'
     },
     {
       icon: "heart",
@@ -77,14 +79,14 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Our Specialized Services
           </h2>
-          <p>
+          <p className="text-gray-500">
             We offer comprehensive physiotherapy services tailored to your
             specific needs and goals
           </p>
-          
+
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -96,7 +98,7 @@ const Services = () => {
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
               >
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 mb-4">
-                  <IconComponent className="w-6 h-6 text-blue-700 " />
+                  <IconComponent className="w-6 h-6 text-teal-700 " />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {service.title}
@@ -109,14 +111,14 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0">Learn More</button>
+                <Link to = {service.to} variant="ghost" className="text-blue-700 hover:text-teal-700  p-0 ">Learn More</Link>
                 <MoveRight className="w-4 h-4 inline-block text-blue-700 p-0 m-3" />
               </div>
             );
           })}
         </div>
         <div className="text-center">
-          <button className="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800  m-5 hover:scale-105 transition pointer">Book your Appointment Now</button>
+          <button className="bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-blue-800  m-5 hover:scale-105 transition pointer">Book your Appointment Now</button>
           <h4 className="text-gray-600">Contact us for more information</h4>
         </div>
       </div>

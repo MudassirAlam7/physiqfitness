@@ -63,7 +63,7 @@ export function About() {
             {/* Timing + Location */}
             <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
               <div className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-blue-600" />
+                <Clock className="w-5 h-5 text-teal-600" />
                 <div>
                   <div className="font-semibold text-gray-900">Timing</div>
                   <div className="text-sm text-gray-600">Morning : 07:00 - 09:00 AM</div>
@@ -71,7 +71,7 @@ export function About() {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-blue-600" />
+                <MapPin className="w-5 h-5 text-teal-600" />
                 <div>
                   <div className="font-semibold text-gray-900">Location</div>
                   <div>26 Ground Floor, Afzal Appartment</div>

@@ -58,11 +58,11 @@ const Chiropractic = () => {
             <div className="max-w-5xl mx-auto px-6 py-16 space-y-6">
                 <h2 className="text-3xl font-bold text-teal-900">Application of Chiropractic Therapy</h2>
                 <p className="text-gray-500 leading-relaxed bg-white p-6 rounded-xl shadow-md">
-                    The chiropractor goes through the medical history and examines the individual physically. He might also ask a few questions and might go through other lab tests such as X-rays and more. After all the investigations the chiropractor determines if an individual should undergo chiropractic therapy.
+                   The chiropractor goes through the medical history and examines the individual physically. He might also ask a few questions and might go through other lab tests such as X-rays and more. After all the investigations the chiropractor determines if an individual should undergo chiropractic therapy.
 
-                    During the treatment session, one or more adjustments might be done. Adjustments are also called manipulations. The therapy is done manually, i.e. by hand. The adjustments are done to increase the range of motion and to improve the quality of the area being treated.
+During the treatment session, one or more adjustments might be done. Adjustments are also called manipulations. The therapy is done manually, i.e. by hand. The adjustments are done to increase the range of motion and to improve the quality of the area being treated.
 
-                    Apart from manipulation, chiropractors may use other treatments such as mobilization, massage, modalities like ice therapy, heat therapy, and electric stimulation.
+Apart from manipulation, chiropractors may use other treatments such as mobilization, massage, modalities like ice therapy, heat therapy, and electric stimulation.
                 </p>
             </div>
 
@@ -147,7 +147,22 @@ const Chiropractic = () => {
                     ))}
                 </div>
             </div>
-
+             {/* New Section with Background Color */}
+      <div className="bg-teal-100 py-16">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-teal-800 mb-6">
+            Why Choose Our Chiropractic Services?
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Our experienced chiropractors use a holistic approach to treat your body. 
+            We focus on aligning your spine, improving nervous system function, and 
+            promoting overall wellness. With personalized care, modern techniques, 
+            and a commitment to your health, we ensure every session brings you 
+            closer to a pain-free and balanced life.
+          </p>
+        </div>
+      </div>
+            
             {/* Call To Action */}
             <div className="text-center py-20">
                 <button className="bg-teal-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-teal-700 transition">

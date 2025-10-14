@@ -9,6 +9,8 @@ import { Footer } from './components/Footer'
 import Contact from './pages/Contact'
 import Topbar from './components/Topbar'
 import Chiropractic from './pages/chiropractic'
+import SportsInjury from './pages/sportsinjury'
+import Hijama from './pages/Hijama'
 const App = () => {
   return (
     <div>
@@ -25,6 +27,8 @@ const App = () => {
     <Route path='/about' element={<About/>} />
     <Route path='/contact' element = {<Contact/>}/>
     <Route path='/services/chiro' element={<Chiropractic/>}/>
+    <Route path='/services/sports' element={<SportsInjury/>}/>
+    <Route path='/services/hijama' element={<Hijama/>}/>
    </Routes>
    <Footer/>
    </div>

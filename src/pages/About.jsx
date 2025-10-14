@@ -1,4 +1,5 @@
 import { CheckCircle, Award, Clock, MapPin, Stethoscope } from "lucide-react";
+import profile from '../assets/profile.jpg'
 
 const features = [
   "State-of-the-art equipment and facilities",
@@ -85,7 +86,7 @@ export function About() {
         {/* Doctor Section */}
         <div className="mt-20 bg-gray-50 rounded-2xl shadow-md p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
           <img
-            src="https://randomuser.me/api/portraits/men/32.jpg" // replace with real photo
+            src= {profile}
             alt="Doctor"
             className="w-40 h-40 rounded-full object-cover shadow-md"
           />

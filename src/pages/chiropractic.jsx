@@ -160,15 +160,14 @@ Apart from manipulation, chiropractors may use other treatments such as mobiliza
             and a commitment to your health, we ensure every session brings you 
             closer to a pain-free and balanced life.
           </p>
-        </div>
-      </div>
-            
-            {/* Call To Action */}
-            <div className="text-center py-20">
+          <div className="text-center py-10">
                 <button className="bg-teal-600 text-white px-10 py-3 rounded-full font-semibold hover:bg-teal-700 transition">
                     Book Your Appointment Now
                 </button>
             </div>
+        </div>
+      </div>
+            
         </section>
     );
 };

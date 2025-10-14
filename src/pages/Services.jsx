@@ -21,7 +21,7 @@ const Services = () => {
       description:
         "Hands-on spinal adjustments to improve alignment, relieve pain, and enhance mobility.",
       features: ["Spinal adjustments", "Pain relief", "Improved posture"],
-      to : 'chiro'
+      to : '/services/chiro'
     },
     {
       icon: "heart",
@@ -33,6 +33,7 @@ const Services = () => {
         "Customized rehab",
         "Performance recovery",
       ],
+      to : '/services/sports'
     },
     {
       icon: "zap",
@@ -40,6 +41,7 @@ const Services = () => {
       description:
         "Traditional cupping therapy to improve circulation and detoxify the body.",
       features: ["Cupping therapy", "Detoxification", "Pain management"],
+      to : "/services/hijama"
     },
     {
       icon: "target",

@@ -24,7 +24,9 @@ const Topbar = () => {
         </a>
         {/* Right side: Social Icons */}
         <div className="flex items-center space-x-3">
+          <a href="https://www.facebook.com/mujeeb.urrehman.92103?rdid=4QpOKLX11VyyLCcF#" target='_blank'>
           <Facebook size={16} className="cursor-pointer hover:text-gray-300" />
+          </a>
           <a href="https://www.instagram.com/the_physio_fitness_/" target='_blank'>
           <Instagram size={16} className="cursor-pointer hover:text-gray-300" />
           </a>

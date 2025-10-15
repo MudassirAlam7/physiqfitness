@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import kinesioImage from "../assets/kinesio.jpg"; // replace with your own Kinesio taping image
+import Kinisio from "../assets/kinesio.jpg"
 
 const KinesioTaping = () => {
     return (
@@ -8,7 +8,7 @@ const KinesioTaping = () => {
             {/* Hero Section */}
             <div className="relative h-[90vh] flex items-center justify-center">
                 <img
-                    src={kinesioImage}
+                    src={Kinisio}
                     alt="Kinesio Taping"
                     className="absolute inset-0 w-full h-full object-cover brightness-75"
                 />

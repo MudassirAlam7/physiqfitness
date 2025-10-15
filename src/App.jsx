@@ -11,6 +11,8 @@ import Topbar from './components/Topbar'
 import Chiropractic from './pages/chiropractic'
 import SportsInjury from './pages/sportsinjury'
 import Hijama from './pages/Hijama'
+import ManualTherapy from './pages/ManualTherapy'
+import KinesioTaping from './pages/Kinisio'
 const App = () => {
   return (
     <div>
@@ -29,6 +31,9 @@ const App = () => {
     <Route path='/services/chiro' element={<Chiropractic/>}/>
     <Route path='/services/sports' element={<SportsInjury/>}/>
     <Route path='/services/hijama' element={<Hijama/>}/>
+    <Route path='/services/manual' element={<ManualTherapy/>}/>
+    <Route path='/services/kinisio' element={<KinesioTaping/>}/>
+
    </Routes>
    <Footer/>
    </div>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const[isopen, setIsOpen] = useState(false)
 
   return (
     <header className="bg-white shadow-md  top-9 z-50">
@@ -24,24 +25,86 @@ const Header = () => {
         </div>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center space-x-10">
-          {[
-            { to: "/", label: "Home" },
-            { to: "/services", label: "Services" },
-            { to: "/about", label: "About" },
-            { to: "/team", label: "Team" },
-            { to: "/contact", label: "Contact" },
-            { to: "/blog", label: "Blog" },
-          ].map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-gray-800 hover:text-teal-600 font-semibold transition-colors duration-300"
+      
+<nav className="hidden md:flex items-center space-x-10 relative">
+  {[
+    { to: "/", label: "Home" },
+    { to: "/services", label: "Services" },
+    { to: "/about", label: "About" },
+    { to: "/team", label: "Team" },
+    { to: "/contact", label: "Contact" },
+    { to: "/blog", label: "Blog" },
+  ].map((link) => (
+    <div key={link.to} className="relative group">
+      {link.label === "Services" ? (
+        <>
+          {/* Keep the button and dropdown inside the same group */}
+          <div className="relative"
+          onMouseEnter={()=>setIsOpen(true)}
+          onMouseLeave={()=>setIsOpen(false)}
+          >
+          <button
+            className="text-gray-800 hover:text-teal-600 cursor-pointer font-semibold transition-colors duration-300 flex items-center space-x-1"
+          >
+            <span>{link.label}</span>
+            <svg
+              className="w-4 h-4 mt-[2px]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+         
+
+          {/* Dropdown Menu */}
+          {isopen && (
+             <div className="absolute top-full  left-0 mt-0 w-56 bg-teal-400/80 text-white backdrop-blur-sm shadow-lg rounded-lg border border-teal-500 z-50 transition-all duration-500">
+            {[
+              { to: "/services/chiro", name: "Chiropractic" },
+              { to: "/services/sports", name: "Sports Rehab" },
+              { to: "/services/hijama", name: "Hijama Therapy" },
+              { to: "/services/manual", name: "Manual Therapy" },
+              { to: "/services/kinisio", name: "Kinesio Taping" },
+              { to: "/services/sports-mfr", name: "Sports MFR" },
+              { to: "/services/acupuncture", name: "Acupuncture (Dry Needling)" },
+            ].map((service) => (
+              <Link
+                key={service.to}
+                to={service.to}
+                className="block px-4 py-2 text-white hover:bg-teal-600/70 transition rounded-md"
+                onClick={()=>setIsOpen(false)}
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+          )}
+         
+          </div>
+        </>
+      ) : (
+        <Link
+          to={link.to}
+          className="text-gray-800 hover:text-teal-600 font-semibold transition-colors duration-300"
+        >
+          {link.label}
+        </Link>
+      )}
+  
+    </div>
+    
+  ))}
+</nav>
+
+
+
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">

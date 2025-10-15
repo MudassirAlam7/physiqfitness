@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import dryNeedlingImage from "../assets/dryneedling.jpg"; // replace with your dry needling image
+import dryNeedlingImage from "../assets/DryNeedling.jpg"; // replace with your dry needling image
 
 const DryNeedling = () => {
     return (

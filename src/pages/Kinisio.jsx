@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Kinisio from "../assets/kinesio.jpg"
+import Kinisio from "../assets/kinisio.jpg"
 
 const KinesioTaping = () => {
     return (

@@ -73,7 +73,7 @@ const Header = () => {
               { to: "/services/manual", name: "Manual Therapy" },
               { to: "/services/kinisio", name: "Kinesio Taping" },
               { to: "/services/sports-mfr", name: "Sports MFR" },
-              { to: "/services/acupuncture", name: "Acupuncture (Dry Needling)" },
+              { to: "/services/accupuncture", name: "Acupuncture (Dry Needling)" },
             ].map((service) => (
               <Link
                 key={service.to}

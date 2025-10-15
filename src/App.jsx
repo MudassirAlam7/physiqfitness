@@ -13,6 +13,7 @@ import SportsInjury from './pages/sportsinjury'
 import Hijama from './pages/Hijama'
 import ManualTherapy from './pages/ManualTherapy'
 import KinesioTaping from './pages/Kinisio'
+import DryNeedling from './pages/DryNeedling'
 const App = () => {
   return (
     <div>
@@ -33,6 +34,8 @@ const App = () => {
     <Route path='/services/hijama' element={<Hijama/>}/>
     <Route path='/services/manual' element={<ManualTherapy/>}/>
     <Route path='/services/kinisio' element={<KinesioTaping/>}/>
+    <Route path='/services/accupuncture' element={<DryNeedling/>}/>
+
 
    </Routes>
    <Footer/>
